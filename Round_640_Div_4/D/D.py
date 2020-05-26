@@ -61,4 +61,5 @@ for i in range(t):
     game = candygame(n, input_candies, start_ans)
     answer = game.solve()
     answer.output()
-    start_ans.refresh()
+    start_ans = answer(0, 0, 0)
+    #start_ans.refresh()
