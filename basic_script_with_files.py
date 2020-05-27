@@ -3,13 +3,14 @@ def solve(n):
     return ans
  
 fin = open('input.txt', 'r')
-fout = open('input.txt', 'w')
+fout = open('output.txt', 'w')
 
 #t = int(input())
 t = int(fin.readline())
-for i in range(t):
+for ___ in range(t):
+    n = int(fin.readline)
     answer = solve(int(fin.readline()))
-    print(fout.write(str(ans)))
+    fout.write(str(answer) + '\n')
 
 fin.close()
 fout.close()
