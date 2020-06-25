@@ -1,21 +1,19 @@
-def check_prefix(str, prefix):
-    is_similar = True
-    prefix_len = len(prefix)
-    i = 0
-    while (is_similar) and (i <= prefix_len - 1):
-        is_similar = str[i] == prefix[i]
-        if is_similar:
-            i += 1
-    return i
+def solve(k, j):
+    some_number = 2**(k-1)
+    if j == some_number:    # then it's a separating element
+        return some_number-1
+    else:
+        k -= 1
+        if j > some_number:
+            j -= some_number
+        return solve(k, j)
 
-def z_function(s):
-    l = len(s)
-    ans = [0]*l
-    for j in range(1,l):
-        ans[j] = check_prefix(s, s[j:l])
-    return ans
-    
-
-ss = input()
-ans = z_function(ss)
-print(' '.join(str(k) for k in ans))
+t = int(input())
+for ___ in range(t):
+    inp = input()
+    k, j = (int(ss) for ss in inp.split(' '))
+    if (j*(j%2 - 1)) == 0:
+        ans = 0
+    else:
+        ans = solve(k, j)
+    print(ans)
